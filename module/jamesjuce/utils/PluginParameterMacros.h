@@ -22,7 +22,7 @@ static NormalisableRange<float> paramKey##Range = NormalisableRange<float>( \
 
 #define PARAMETER_ID_VARIABLE(paramKey) paramKey##ID
 #define PARAMETER_ID_STRING(paramKey) "paramKey##ID"
-
+#define PARAMETER_DEFAULT_VARIABLE(paramKey) paramKey##DefaultValue
 
 #define VTS_ADD_PARAMS(paramKey,valuetotextlambda,texttovaluelambda)  \
 paramKey##ID,   \
