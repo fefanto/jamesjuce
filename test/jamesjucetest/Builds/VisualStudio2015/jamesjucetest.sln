@@ -1,0 +1,47 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2015
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jamesjucetest - Standalone Plugin", "jamesjucetest_StandalonePlugin.vcxproj", "{553A7B5E-56A4-1A70-EFB0-5EF1D1E08F94}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A2288D91-25D7-9593-62D9-A279489D79AB} = {A2288D91-25D7-9593-62D9-A279489D79AB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jamesjucetest - VST", "jamesjucetest_VST.vcxproj", "{84C9160A-BB09-76C5-FABA-C270DF30A1CA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A2288D91-25D7-9593-62D9-A279489D79AB} = {A2288D91-25D7-9593-62D9-A279489D79AB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jamesjucetest - VST3", "jamesjucetest_VST3.vcxproj", "{7DD19D4F-7698-47E3-F7D4-3E8CAF7837DD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A2288D91-25D7-9593-62D9-A279489D79AB} = {A2288D91-25D7-9593-62D9-A279489D79AB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jamesjucetest - Shared Code", "jamesjucetest_SharedCode.vcxproj", "{A2288D91-25D7-9593-62D9-A279489D79AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84C9160A-BB09-76C5-FABA-C270DF30A1CA}.Debug|x64.Build.0 = Debug|x64
+		{84C9160A-BB09-76C5-FABA-C270DF30A1CA}.Debug|x64.ActiveCfg = Debug|x64
+		{84C9160A-BB09-76C5-FABA-C270DF30A1CA}.Release|x64.Build.0 = Release|x64
+		{84C9160A-BB09-76C5-FABA-C270DF30A1CA}.Release|x64.ActiveCfg = Release|x64
+		{7DD19D4F-7698-47E3-F7D4-3E8CAF7837DD}.Debug|x64.Build.0 = Debug|x64
+		{7DD19D4F-7698-47E3-F7D4-3E8CAF7837DD}.Debug|x64.ActiveCfg = Debug|x64
+		{7DD19D4F-7698-47E3-F7D4-3E8CAF7837DD}.Release|x64.Build.0 = Release|x64
+		{7DD19D4F-7698-47E3-F7D4-3E8CAF7837DD}.Release|x64.ActiveCfg = Release|x64
+		{553A7B5E-56A4-1A70-EFB0-5EF1D1E08F94}.Debug|x64.Build.0 = Debug|x64
+		{553A7B5E-56A4-1A70-EFB0-5EF1D1E08F94}.Debug|x64.ActiveCfg = Debug|x64
+		{553A7B5E-56A4-1A70-EFB0-5EF1D1E08F94}.Release|x64.Build.0 = Release|x64
+		{553A7B5E-56A4-1A70-EFB0-5EF1D1E08F94}.Release|x64.ActiveCfg = Release|x64
+		{A2288D91-25D7-9593-62D9-A279489D79AB}.Debug|x64.Build.0 = Debug|x64
+		{A2288D91-25D7-9593-62D9-A279489D79AB}.Debug|x64.ActiveCfg = Debug|x64
+		{A2288D91-25D7-9593-62D9-A279489D79AB}.Release|x64.Build.0 = Release|x64
+		{A2288D91-25D7-9593-62D9-A279489D79AB}.Release|x64.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
