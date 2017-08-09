@@ -123,6 +123,8 @@ struct StoryboardElement{
        
         if(label!=nullptr)
             label->setVisible( ( sceneId == newSceneNumber ) || (sceneId == 0) );
+        
+        
     }
     
     

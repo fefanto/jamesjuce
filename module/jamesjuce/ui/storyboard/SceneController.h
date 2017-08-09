@@ -40,6 +40,15 @@ struct SceneController{
     ~SceneController()
     {};
     
+    Drawable* getSceneBackground() const{
+        return sceneBackGround;
+    };
+    
+    int getSceneNumber() const{
+        return sceneNumber;
+    }
+    
+    
   
     
 };

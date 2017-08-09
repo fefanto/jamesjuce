@@ -85,6 +85,7 @@ public:
                 sc->sceneActivator->setToggleState(false, dontSendNotification);
             }
         }
+        repaint();
         
     }
     
@@ -247,19 +248,15 @@ public:
         if(background!=nullptr){
             background->drawWithin(g, bounds, RectanglePlacement::Flags::stretchToFit, 1.0);
         }
+        
+        for(auto sc : sceneControllers)
+        {
+            Drawable* sb = sc->getSceneBackground();
+            if( (sb!=nullptr) && (currentScene == sc->getSceneNumber()) )
+                sb->drawWithin(g, bounds, RectanglePlacement::Flags::stretchToFit, 1.0);
+        }
+            
 
-//#if JUCE_DEBUG
-//        g.setColour(Colours::yellow);
-//        for (int i = 0; i < controls.size(); ++i)
-//        {
-//            g.drawRect(controls[i]->getBounds().expanded(1, 1).toFloat());
-//        }
-//        g.setColour(Colours::lightblue);
-//        for (int i = 0; i < labels.size(); ++i)
-//        {
-//            g.drawRect(labels[i]->getBounds().expanded(1, 1).toFloat());
-//        }
-//#endif
 
     }
     
