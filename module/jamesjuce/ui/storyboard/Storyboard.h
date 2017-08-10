@@ -230,6 +230,10 @@ public:
                 sceneControllers[i]->sceneActivator->addListener(this);
                 sceneControllers[i]->sceneActivator->setClickingTogglesState(true);
                 sceneControllers[i]->sceneActivator->setTriggeredOnMouseDown (true);
+                
+                if(sceneControllers[i]->getSceneNumber() == currentScene){
+                    sceneControllers[i]->sceneActivator->setToggleState(true,dontSendNotification);
+                }
 
             }
             
