@@ -45,6 +45,8 @@ namespace jamesjuce
 #include "ui/parametercomponents/AudioProcessorParameterToggleButton.cpp"
 #include "ui/parametercomponents/AudioProcessorParameterCarouselButton.cpp"
 
+#include "ui/components/VuMeter.cpp"
+
     
 }
 

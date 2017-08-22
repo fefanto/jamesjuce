@@ -117,6 +117,8 @@ public:
         AudioProcessorParameterCarouselButton* aCarouselButton;
         AudioProcessorParameterCarouselButton::CarouselButtonAttachment* aCarouselButtonAttach;
         
+        AudioProcessorParameterWithID* param;
+        
         // TBD: for (StoryboardElement sel :  storyboardElements)
         for (int i = 0; i < storyboardElements.size(); ++i)
         {
@@ -127,7 +129,9 @@ public:
             bool paramSyncable = storyboardElements[i]->timesyncable;
             
             bool showLabel = storyboardElements[i]->showLabel;
-            AudioProcessorParameterWithID* param = valueTreeState.getParameter(paramId);
+ 
+            if(paramId.length()>0)
+                param = valueTreeState.getParameter(paramId);
             
             if(showLabel)
             {
@@ -208,6 +212,14 @@ public:
                     controls.add(aCarouselButton);
                     storyboardElements[i]->setWidget(aCarouselButton);
                     
+                    break;
+                }
+                case wtExternalComponent:
+                {
+                    Component* externalComponent = storyboardElements[i]->extComp;
+                    addAndMakeVisible(externalComponent );
+                    //controls.add(externalComponent);
+                    storyboardElements[i]->setWidget(externalComponent);
                     break;
                 }
                     

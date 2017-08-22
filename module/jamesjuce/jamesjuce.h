@@ -75,7 +75,9 @@ namespace jamesjuce
 #include "ui/storyboard/StoryBoardElement.h"
 #include "ui/storyboard/SceneController.h"
 #include "ui/storyboard/StoryBoard.h"
-    
+
+#include "ui/components/VuMeter.h"
+
 #include "utils/PluginParameterMacros.h"
     
 }

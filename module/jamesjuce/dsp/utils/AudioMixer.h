@@ -25,6 +25,7 @@ private:
  
     ScopedPointer < AudioBuffer<float> > wetAudio;
     ScopedPointer < AudioBuffer<float> > interleavedAudio;
+    ScopedPointer < AudioBuffer<float> > interleavedAudioSidechain;
     
     ScopedPointer <LowpassSmoothedValue<float>> wetSmoother;
     ScopedPointer <LowpassSmoothedValue<float>> wetLevelSmoother;
@@ -59,6 +60,7 @@ public:
     //AudioSampleBuffer& getDryAudio();
     AudioSampleBuffer* getWetAudio();
     AudioSampleBuffer* getInterleavedAudio();
+    AudioSampleBuffer* getInterleavedAudioSidechain();
     
     /**
      checks if internal wet audio buffer size is compatible with 
@@ -101,6 +103,10 @@ inline AudioSampleBuffer* AudioMixer::getInterleavedAudio(){
     return interleavedAudio.get();
 }
 
+inline AudioSampleBuffer* AudioMixer::getInterleavedAudioSidechain(){
+    return interleavedAudioSidechain.get();
+}
+
 
 inline void AudioMixer::prepareToPlay(double newSampleRate,int samplesPerBlock){
     prepareBuffer(samplesPerBlock);
@@ -117,7 +123,11 @@ inline void AudioMixer::prepareBuffer(int samplesPerBlock){
         //dryAudio.setSize(AudioMixer::channelCount, samplesPerBlock_,true,true,true);
         wetAudio->setSize(AudioMixer::channelCount, samplesPerBlock_,true,true,true);
         interleavedAudio->setSize(1, samplesPerBlock_*2,true,true,true);
+        interleavedAudioSidechain->setSize(1, samplesPerBlock_*2,true,true,true);
     }
+    interleavedAudioSidechain->clear();
+    interleavedAudio->clear();
+
 }
 
 

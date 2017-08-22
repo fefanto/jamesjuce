@@ -14,6 +14,7 @@ samplesPerBlock_(AudioMixer::defaultSamplesPerBlock)
 {
     wetAudio = new AudioSampleBuffer(AudioMixer::channelCount,samplesPerBlock_);
     interleavedAudio = new AudioSampleBuffer(1,samplesPerBlock_*2);
+    interleavedAudioSidechain = new AudioSampleBuffer(1,samplesPerBlock_*2);
     wetSmoother = new LowpassSmoothedValue<float>(0.5f);
     inLevelSmoother = new LowpassSmoothedValue<float>(0.5f);
     wetLevelSmoother = new LowpassSmoothedValue<float>(0.5f);

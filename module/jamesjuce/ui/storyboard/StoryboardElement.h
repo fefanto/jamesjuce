@@ -8,6 +8,7 @@ enum widgetType{
     wtIncDecSlider,
     wtButton,
     wtCarouselButton,
+    wtExternalComponent,
 };
 
 struct ElementPosition
@@ -61,7 +62,8 @@ struct StoryboardElement{
                           int sid = 0,
                           bool ts = false,
                           LookAndFeel* lf = nullptr,
-                          LookAndFeel* lbllf = nullptr
+                          LookAndFeel* lbllf = nullptr,
+                          Component* externalComp = nullptr
                       )
     :wType(w),
     pos(xpos,ypos,xsize,ar),
@@ -75,7 +77,8 @@ struct StoryboardElement{
     lookAndfeel(lf),
     labelLookAndfeel(lbllf),
     widget(nullptr),
-    label(nullptr)
+    label(nullptr),
+    extComp(externalComp)
     {};
     
     
@@ -97,6 +100,7 @@ struct StoryboardElement{
     bool autoToggle;
     LookAndFeel* lookAndfeel;
     LookAndFeel* labelLookAndfeel;
+    Component* extComp;
     
     
     Component* widget;
