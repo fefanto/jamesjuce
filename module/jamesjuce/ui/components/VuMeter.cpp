@@ -99,18 +99,6 @@ void VuMeter::drawStereoMeter(Graphics &g)
         g.setColour(colours[outlineColour]);
         g.drawRoundedRectangle(bounds, minUnit, 0.5f);
         
-//        g.setGradientFill(ColourGradient(colours[ledOffColour].withAlpha(0.3f),
-//                                         0.0f, 0.0f,
-//                                         colours[ledOffColour].withAlpha(0.05f),
-//                                         0.0f, width, false));
-//        
-//        
-//        // TBD: this is where a mono channel outline occupies most of the background
-//        
-//        g.fillRoundedRectangle(hUnit, vUnit, width  - 2*hUnit , height/ 2.0f - 2*vUnit,minUnit);
-//        g.fillRoundedRectangle(hUnit, height/2.0 +vUnit, width  - 2*hUnit, height/ 2.0f - 2*vUnit, minUnit);
-
-   
         g.setColour(colours[ledOffColour]);
 
         for(int i = jmax<float>(vL,0); i < ledNumber; i++){
@@ -145,12 +133,9 @@ void VuMeter::drawStereoMeter(Graphics &g)
     else if(type == StereoVertical)
     {
     
- 
-
         const float vUnit = height/(ledNumber*4.0f + (ledNumber+1)*2.0f) ; // I want to draw 16 leds whatsoever...
         const float hUnit = width/16.0f ;
         const float minUnit = jmin(vUnit,hUnit);
-
 
         // Outline - Background & channel Background
 
@@ -160,20 +145,6 @@ void VuMeter::drawStereoMeter(Graphics &g)
         g.setColour(colours[outlineColour]);
         g.drawRoundedRectangle(bounds, minUnit, 0.5f);
 
-//        g.setGradientFill(ColourGradient(colours[ledOffColour].withAlpha(0.3f),
-//                                         0.0f, 0.0f,
-//                                         colours[ledOffColour].withAlpha(0.05f),
-//                                         0.0f, height, false));
-//
-//
-//        // TBD: this is where a mono channel outline occupies most of the background
-//
-//        g.fillRoundedRectangle(hUnit, vUnit, width / 2.0f - 2*hUnit , height - 2*vUnit,minUnit);
-//
-//        g.fillRoundedRectangle(width / 2.0f + hUnit, vUnit, width / 2.0f - 2*hUnit, height - 2*vUnit, minUnit);
-
-
- 
         g.setColour(colours[ledOffColour]);
         for(int i = jmax<float>(vL,0); i < ledNumber; i++){
             g.fillRoundedRectangle(2*hUnit, height - (i+1)*6*vUnit , 4*hUnit, 4*vUnit, minUnit);
