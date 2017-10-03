@@ -305,15 +305,17 @@ public:
             
             if(storyboardElements[i]->showLabel){
                 jassert(storyboardElements[i]->label != nullptr);
-                Rectangle<float> labelbounds = widgetbounds;
-                float labelHeight = bounds.getWidth()*0.02f;
-                labelbounds = labelbounds.withY(labelbounds.getY()-1.2f*labelHeight).withHeight(labelHeight);
-                BorderSize<int> bs = storyboardElements[i]->label->getBorderSize();
-                bs.setTop((int)(labelHeight/4.0f));
-                bs.setBottom((int)(labelHeight/4.0f));
+                
+                // label above widget , 15% tall.
+                Rectangle<float> labelbounds = widgetbounds.removeFromTop(widgetbounds.getHeight()*0.15f);
+                labelbounds.translate(0,-labelbounds.getHeight());
+                
+                BorderSize<int> bs(0);
+                
                 storyboardElements[i]->label->setBorderSize(bs);
                 storyboardElements[i]->label->setBounds(labelbounds.toNearestInt());
                 storyboardElements[i]->label->setMinimumHorizontalScale(0.1f);
+                storyboardElements[i]->label->setJustificationType(Justification::horizontallyCentred);
             }
             
         }
